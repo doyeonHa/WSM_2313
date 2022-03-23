@@ -1,10 +1,14 @@
 /* 우선순위: 포괄 < 구체 */
 /* 우선순위: class < id */
-/*우선순위: 같ㅇ든 급일 때, 위 < 아래 코드*/
+/* 우선순위: 같은 급일 때, 위 < 아래 코드*/
 body {
     color: gray;
 }
-li {
+body > ul > li {
+    color: green;
+}
+body li, h6 {
+    /* >: 자식, 띄어쓰기: 자손 */
     color: teal;
 }
 #leader {
@@ -15,4 +19,19 @@ li {
 }
 .incheon{
     color: darkblue;
+}
+h1+h2 {
+    background-color: skyblue;
+}
+h2~h3 {
+    /* 마주하는 모든 자매 */
+    background-color: aqua;
+}
+li:nth-child(2) {
+    /* n번째 자식 */
+    text-decoration: underline;
+}
+[type] {
+    /* HTML 태그 속성="값" */
+    background-color: chocolate;
 }
